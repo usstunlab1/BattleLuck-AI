@@ -1,0 +1,34 @@
+{
+  "name": "vrisingbattleai",
+  "version": "1.0.0",
+  "description": "VRISINGBATTLEAI - Advanced Battle AI MCP Server",
+  "main": "./lib/src/index.js",
+  "scripts": {
+    "dev:http": "nodemon --exec node --inspect=9239 --signal SIGINT -r ts-node/register ./src/index.ts http",
+    "dev:stdio": "nodemon --quiet --exec node --signal SIGINT -r ts-node/register ./src/index.ts stdio",
+    "dev:inspector:http": "mcp-inspector --config .inspector.json --server vrisingbattleai_http",
+    "dev:inspector:stdio": "mcp-inspector --config .inspector.json --server vrisingbattleai_stdio",
+    "build": "tsc --build",
+    "start": "node ./lib/src/index.js http",
+    "start:http": "node ./lib/src/index.js http",
+    "start:stdio": "node ./lib/src/index.js stdio",
+    "dev": "nodemon --exec node --signal SIGINT -r ts-node/register ./src/index.ts http",
+    "test-health": "curl -s \"https://superuser.app/org/nova/chats/new?profile_id=botp_ERhjwtiqADaLCi3J49b85xWLXyzhKHPY\" || echo 'Superuser endpoint not reachable'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.1",
+    "express": "^4.21.2",
+    "stripe": "^18.4.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "0.17.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
