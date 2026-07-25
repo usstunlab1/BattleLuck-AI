@@ -35,7 +35,7 @@ Default sidecar base URL for local dev: `http://localhost:3000`
 
 ## In-game Commands
 
-- `bl.aistatus` / `bl.ai <question>`
-- `bl.ai.status` / `bl.ai.test <query>` / `bl.ai.event`
+
+ai.test <query>` / `bl.ai.event`
 
 See [INTEGRATION_SETUP.md](INTEGRATION_SETUP.md) for full configuration details.
